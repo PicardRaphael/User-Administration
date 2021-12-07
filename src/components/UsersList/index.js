@@ -13,7 +13,7 @@ import
   MyText
 } from './UsersListStyle';
 
-const UsersList = ({ users }) => (
+const UsersList = ({ users, removeUser }) => (
   <MyList>
     {users.length > 0 ? (
       <>
@@ -25,7 +25,7 @@ const UsersList = ({ users }) => (
               </MyListItemAvatar>
               <MyListItemText primary={user.name} secondary={user.timezone.label} />
               <MyIconEdit />
-              <MyIconDelete />
+              <MyIconDelete onClick={() => removeUser(user.id)}/>
             </MyListItem>
             <MyDivider variant="inset" component="li" />
           </React.Fragment>
@@ -44,7 +44,8 @@ UsersList.propTypes = {
     timezone: PropTypes.shape({
       label: PropTypes.string.isRequired
     })
-  }))
+  })),
+  removeUser: PropTypes.func.isRequired
 }
 
 export default UsersList;
