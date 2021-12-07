@@ -4,7 +4,18 @@ import { UsersContext } from '../../store/contexts/UsersContext';
 
 const AppContainer = props => {
   const [openModal, setOpenModal] = useState(false);
+  const [initialValues, setInitialValues] = useState({
+    name: '',
+    picture: '',
+    timezone: {}
+  });
   const { users, removeUser } = useContext(UsersContext);
+
+  const modalEditUser = (user) =>
+  {
+    setOpenModal(true);
+    setInitialValues(user);
+  }
 
   return (
     <App
@@ -12,6 +23,8 @@ const AppContainer = props => {
       setOpenModal={setOpenModal}
       users={users}
       removeUser={removeUser}
+      initialValues={initialValues}
+      modalEditUser={modalEditUser}
     />
   )
 }

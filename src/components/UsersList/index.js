@@ -13,7 +13,7 @@ import
   MyText
 } from './UsersListStyle';
 
-const UsersList = ({ users, removeUser }) => (
+const UsersList = ({ users, removeUser, modalEditUser }) => (
   <MyList>
     {users.length > 0 ? (
       <>
@@ -24,7 +24,7 @@ const UsersList = ({ users, removeUser }) => (
                 <MyAvatar alt={user.name} src={user.picture} />
               </MyListItemAvatar>
               <MyListItemText primary={user.name} secondary={user.timezone.label} />
-              <MyIconEdit />
+              <MyIconEdit onClick={() => modalEditUser(user)}/>
               <MyIconDelete onClick={() => removeUser(user.id)}/>
             </MyListItem>
             <MyDivider variant="inset" component="li" />
