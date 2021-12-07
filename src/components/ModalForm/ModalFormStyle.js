@@ -2,8 +2,10 @@ import { styled } from '@mui/system';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
+import DialogActions from '@mui/material/DialogActions';
 import CloseIcon from '@mui/icons-material/Close';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 export const MyModal = styled(Dialog)({
   '&.MuiPaper-root': {
@@ -31,4 +33,10 @@ export const MyIconClose = styled(CloseIcon)({
   '&:hover': {
     color: '#d32f2f'
   }
+});
+
+export const MyModalActions = styled(DialogActions)({
+});
+
+export const MyButtonClosed = styled(Button)({
 });

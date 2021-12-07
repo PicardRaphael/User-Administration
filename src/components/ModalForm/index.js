@@ -6,7 +6,9 @@ import
   MyModalContent,
   MyModalTitle,
   MyIconClose,
-  MyDivTitle
+  MyDivTitle,
+  MyModalActions,
+  MyButtonClosed
 } from './ModalFormStyle';
 import FormUserContainer from '../../containers/FormUserContainer';
 
@@ -23,6 +25,9 @@ const ModalForm = ({
     <MyModalContent>
       <FormUserContainer {...props} />
     </MyModalContent>
+    <MyModalActions>
+      <MyButtonClosed onClick={() => setOpen(false)}>Fermer</MyButtonClosed>
+    </MyModalActions>
   </MyModal>
 )
 
