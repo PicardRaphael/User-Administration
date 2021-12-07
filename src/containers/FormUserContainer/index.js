@@ -18,10 +18,12 @@ const FormUserContainer = ({ initialValues }) =>
     handleChange,
   ] = useForm(initialValues);
 
-  const submit = (event) =>
+  const handleFormSubmit = (event) =>
   {
     event.preventDefault();
+
     setErrors(validateInfo(values));
+
     if (Object.keys(validateInfo(values)).length === 0)
     {
       setValues(initialValues);
@@ -38,7 +40,7 @@ const FormUserContainer = ({ initialValues }) =>
     <FormUser
       values={values}
       handleChange={handleChange}
-      handleFormSubmit={submit}
+      handleFormSubmit={handleFormSubmit}
       errors={errors}
       successful={successful}
     />
