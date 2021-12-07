@@ -29,33 +29,33 @@ export const MyButton = styled(Button)({
 
 export const MyErrorText = styled(FormHelperText)({
   color: '#d32f2f',
-  margin: '3px 14px 0 14px',
+  margin: '0.188rem 0.875rem 0 0.875rem',
 });
 
 export const MyTimezone = styled(TimezoneSelect)({
   '&:hover': {
     '&.error-timezone>.react-select__control': {
-      border: '1px solid #d32f2f !important',
+      border: '0.063rem solid #d32f2f !important',
     },
     '&#timezone>.react-select__control': {
-      border: '1px solid black'
+      border: '0.063rem solid black'
     },
     '&#timezone>.react-select__control--is-focused': {
       border: 'none',
     },
   },
   '&#timezone>.react-select__control--is-focused': {
-    border: '1px solid #2684ff !important',
+    border: '0.063rem solid #2684ff !important',
   },
   '&.error-timezone>.react-select__control': {
-    border: '1px solid #d32f2f',
+    border: '0.063rem solid #d32f2f',
   },
   '&.error-timezone>.react-select__control>.react-select__value-container>#react-select-2-placeholder': {
     color: '#d32f2f'
   },
   '&#timezone>.react-select__menu': {
     position: 'initial',
-    width: '339px'
+    width: '21.188rem'
   }
 });
 
