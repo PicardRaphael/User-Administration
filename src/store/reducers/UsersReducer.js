@@ -18,7 +18,6 @@ const UsersReducer = (state, action) => {
       const updateUsers = state.users.map(user => {
         if (user.id === updateUser.id)
         {
-          console.log('ok')
           return updateUser;
         }
         return user;
