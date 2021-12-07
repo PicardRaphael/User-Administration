@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 
 export const MyModal = styled(Dialog)({
   '&.MuiPaper-root': {
-    with: '476px'
+    with: '29.75rem'
   }
 });
 

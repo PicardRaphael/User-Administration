@@ -32,7 +32,7 @@ const FormUserContainer = ({ initialValues }) =>
         ...values
       })
       setSuccessful(true);
-      setTimeout(() => setSuccessful(false), 2500);
+      setTimeout(() => setSuccessful(false), 1000);
     } 
   }
 
@@ -54,6 +54,7 @@ FormUserContainer.propTypes = {
     timezone: PropTypes.object.isRequired
   })
 }
+
 FormUserContainer.defaultProps = {
   initialValues: {
     name: '',

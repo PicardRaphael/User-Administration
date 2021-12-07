@@ -8,8 +8,9 @@ import
   IconAdd
 } from './AppStyle';
 import ModalForm from '../ModalForm';
+import UsersList from '../UsersList';
 
-const App = ({ openModal, setOpenModal }) => (
+const App = ({ openModal, setOpenModal, users }) => (
   <main>
     <MyDivGloval component="div">
       <MyTitle variant="h1">Gestion d'utilisateurs</MyTitle>
@@ -22,6 +23,7 @@ const App = ({ openModal, setOpenModal }) => (
         <IconAdd />
         Ajouter un utilisateur
       </MyButtonAdd>
+      <UsersList users={users} />
       <ModalForm open={openModal} setOpen={setOpenModal} />
     </MyDivGloval>
   </main>
@@ -29,7 +31,8 @@ const App = ({ openModal, setOpenModal }) => (
 
 App.propTypes = {
   openModal: PropTypes.bool.isRequired,
-  setOpenModal: PropTypes.func.isRequired
+  setOpenModal: PropTypes.func.isRequired,
+  users: PropTypes.array.isRequired
 }
 
 export default App;

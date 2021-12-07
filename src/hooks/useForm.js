@@ -8,10 +8,20 @@ export const useForm = (initialValues) => {
     const name = event.target ? event.target.name : type;
     const value = event.target ? event.target.value : event;
 
-    setValues({
-      ...values,
-      [name]: value
-    });
+    if (name === 'picture')
+    {
+      setValues({
+        ...values,
+        'picture': URL.createObjectURL(event.target.files[0])
+      });
+    }
+    else
+    {      
+      setValues({
+        ...values,
+        [name]: value
+      });
+    }
   }
 
   return [

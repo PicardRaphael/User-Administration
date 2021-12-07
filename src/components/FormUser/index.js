@@ -45,7 +45,6 @@ const FormUser = ({
               type="file"
               error={errors.hasOwnProperty('picture')}
               helperText={errors.picture}
-              value={values.picture}
               onChange={(evt) => handleChange(evt)}
           />
         </FormGroup>
