@@ -19,7 +19,7 @@ const ModalForm = ({
 }) => (
   <MyModal open={open}>
     <MyDivTitle>
-      <MyModalTitle>Ajouter un utilisateur</MyModalTitle>
+      <MyModalTitle>Ajouter/Modifier un utilisateur</MyModalTitle>
       <MyIconClose onClick={() => setOpen(false)}/>
     </MyDivTitle>
     <MyModalContent>
