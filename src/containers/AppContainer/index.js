@@ -4,11 +4,7 @@ import { UsersContext } from '../../store/contexts/UsersContext';
 
 const AppContainer = props => {
   const [openModal, setOpenModal] = useState(false);
-  const [initialValues, setInitialValues] = useState({
-    name: '',
-    picture: '',
-    timezone: {}
-  });
+  const [initialValues, setInitialValues] = useState({});
   const { users, removeUser } = useContext(UsersContext);
 
   const modalEditUser = (user) =>
@@ -17,6 +13,15 @@ const AppContainer = props => {
     setInitialValues(user);
   }
 
+  const modalAddUser = () =>
+  {
+    setInitialValues({
+      name: '',
+      picture: '',
+      timezone: {}
+    });
+    setOpenModal(true);
+  }
   return (
     <App
       openModal={openModal}
@@ -25,6 +30,7 @@ const AppContainer = props => {
       removeUser={removeUser}
       initialValues={initialValues}
       modalEditUser={modalEditUser}
+      modalAddUser={modalAddUser}
     />
   )
 }

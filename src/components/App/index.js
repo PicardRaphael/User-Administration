@@ -9,8 +9,9 @@ import
 } from './AppStyle';
 import ModalForm from '../ModalForm';
 import UsersList from '../UsersList';
+import isEmptyObject from '../../lib/isEmptyObject';
 
-const App = ({ openModal, setOpenModal, users, removeUser, initialValues, modalEditUser }) => (
+const App = ({ openModal, setOpenModal, users, removeUser, initialValues, modalEditUser, modalAddUser }) => (
   <main>
     <MyDivGloval component="div">
       <MyTitle variant="h1">Gestion d'utilisateurs</MyTitle>
@@ -18,13 +19,13 @@ const App = ({ openModal, setOpenModal, users, removeUser, initialValues, modalE
         variant="extended"
         color="primary"
         aria-label="add"
-        onClick={() => setOpenModal(true)}
+        onClick={modalAddUser}
       >
         <IconAdd />
         Ajouter un utilisateur
       </MyButtonAdd>
       <UsersList users={users} removeUser={removeUser} modalEditUser={modalEditUser} />
-      <ModalForm open={openModal} setOpen={setOpenModal} initialValues={initialValues} />
+      {!isEmptyObject(initialValues) &&  <ModalForm open={openModal} setOpen={setOpenModal} initialValues={initialValues} />}
     </MyDivGloval>
   </main>
 )
@@ -35,7 +36,7 @@ App.propTypes = {
   users: PropTypes.array.isRequired,
   removeUser: PropTypes.func.isRequired,
   modalEditUser: PropTypes.func.isRequired,
-  initialValues: PropTypes.object
+  initialValues: PropTypes.object.isRequired
 }
 
 export default App;
