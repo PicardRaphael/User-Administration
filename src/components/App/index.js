@@ -10,7 +10,7 @@ import
 import ModalForm from '../ModalForm';
 import UsersList from '../UsersList';
 
-const App = ({ openModal, setOpenModal, users }) => (
+const App = ({ openModal, setOpenModal, users, removeUser }) => (
   <main>
     <MyDivGloval component="div">
       <MyTitle variant="h1">Gestion d'utilisateurs</MyTitle>
@@ -23,7 +23,7 @@ const App = ({ openModal, setOpenModal, users }) => (
         <IconAdd />
         Ajouter un utilisateur
       </MyButtonAdd>
-      <UsersList users={users} />
+      <UsersList users={users} removeUser={removeUser} />
       <ModalForm open={openModal} setOpen={setOpenModal} />
     </MyDivGloval>
   </main>
@@ -32,7 +32,8 @@ const App = ({ openModal, setOpenModal, users }) => (
 App.propTypes = {
   openModal: PropTypes.bool.isRequired,
   setOpenModal: PropTypes.func.isRequired,
-  users: PropTypes.array.isRequired
+  users: PropTypes.array.isRequired,
+  removeUser: PropTypes.func.isRequired
 }
 
 export default App;

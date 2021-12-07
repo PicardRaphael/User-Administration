@@ -46,10 +46,18 @@ export const UsersProvider = ({ children }) => {
     })
   }
 
+  const removeUser = (id) => {
+    dispatch({
+      type: 'REMOVE_USER',
+      payload: id
+    })
+  }
+
   return (
     <UsersContext.Provider value={{
       users: state.users,
       addUser,
+      removeUser
     }}>
       {children}
     </UsersContext.Provider>
