@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import TimezoneSelect from "react-timezone-select"
 import FormHelperText from '@mui/material/FormHelperText';
 import Alert from '@mui/material/Alert';
+import Avatar from '@mui/material/Avatar';
 
 export const MyFormDiv = styled(Box)({
   display: 'flex',
@@ -60,4 +61,8 @@ export const MyTimezone = styled(TimezoneSelect)({
 });
 
 export const MyAlert = styled(Alert)({
+});
+
+export const MyAvatar = styled(Avatar)({
+  marginBottom: '0.625rem'
 });
