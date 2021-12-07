@@ -36,6 +36,7 @@ App.propTypes = {
   users: PropTypes.array.isRequired,
   removeUser: PropTypes.func.isRequired,
   modalEditUser: PropTypes.func.isRequired,
+  modalAddUser: PropTypes.func.isRequired,
   initialValues: PropTypes.object.isRequired
 }
 
