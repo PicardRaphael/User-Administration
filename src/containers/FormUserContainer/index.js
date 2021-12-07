@@ -5,10 +5,11 @@ import FormUser from '../../components/FormUser';
 import { useForm } from '../../hooks/useForm';
 import { UsersContext } from '../../store/contexts/UsersContext';
 import validateInfo from '../../lib/validateInfo';
+import isEmptyObject from '../../lib/isEmptyObject';
 
 const FormUserContainer = ({ initialValues }) =>
 {
-  const { addUser } = useContext(UsersContext);
+  const { addUser, editUser } = useContext(UsersContext);
   const [successful, setSuccessful] = useState(false);
   const [errors, setErrors] = useState({});
 
@@ -24,16 +25,24 @@ const FormUserContainer = ({ initialValues }) =>
 
     setErrors(validateInfo(values));
 
-    if (Object.keys(validateInfo(values)).length === 0)
+    if (isEmptyObject(validateInfo(values)))
     {
       setValues(initialValues);
-      addUser({
-        id: uuid(), 
-        ...values
-      })
+      if (!values.hasOwnProperty('id'))
+      { 
+        addUser({
+          id: uuid(),
+          ...values
+        })
+      } else
+      {
+        editUser({
+          ...values
+        })
+      }
       setSuccessful(true);
       setTimeout(() => setSuccessful(false), 1000);
-    } 
+    }
   }
 
   return (
@@ -52,14 +61,7 @@ FormUserContainer.propTypes = {
     name: PropTypes.string.isRequired,
     picture: PropTypes.string.isRequired,
     timezone: PropTypes.object.isRequired
-  })
+  }).isRequired
 }
 
-FormUserContainer.defaultProps = {
-  initialValues: {
-    name: '',
-    picture: '',
-    timezone: {}
-  }
-}
 export default FormUserContainer;

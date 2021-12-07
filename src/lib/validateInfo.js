@@ -1,3 +1,5 @@
+import isEmptyObject from "./isEmptyObject";
+
 const validateInfo = (values) =>
 {
   let errors = {};
@@ -12,7 +14,7 @@ const validateInfo = (values) =>
     errors.picture = "Photo de profil obligatoire";
   }
 
-  if (Object.keys(values.timezone).length === 0)
+  if (isEmptyObject(values.timezone))
   {
     errors.timezone = "Fuseau horaire obligatoire";
   }

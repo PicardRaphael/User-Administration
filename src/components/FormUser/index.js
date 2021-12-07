@@ -10,7 +10,8 @@ import
   MyButton,
   MyTimezone,
   MyErrorText,
-  MyAlert
+  MyAlert,
+  MyAvatar
 } from './FormUserStyle';
 
 const FormUser = ({
@@ -21,7 +22,7 @@ const FormUser = ({
   successful
 }) => (
   <>
-    { successful && <MyAlert severity="success">L'utilisata à été ajouté</MyAlert>}
+    { successful && <MyAlert severity="success">L'utilisateur à été sauvegardé !</MyAlert>}
     <form onSubmit={handleFormSubmit}>
       <MyFormDiv component="div">
         <FormGroup>
@@ -39,6 +40,9 @@ const FormUser = ({
         </FormGroup>
         <FormGroup>
           <MyLabel required id="name">Photo de profil</MyLabel>
+          {
+            values.picture !== "" && <MyAvatar alt={values.name} src={values.picture} />
+          }
           <MyInput
               id="picture"
               name="picture"
