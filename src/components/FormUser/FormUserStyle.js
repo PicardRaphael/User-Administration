@@ -5,6 +5,7 @@ import InputLabel from '@mui/material/InputLabel';
 import Button from '@mui/material/Button';
 import TimezoneSelect from "react-timezone-select"
 import FormHelperText from '@mui/material/FormHelperText';
+import Alert from '@mui/material/Alert';
 
 export const MyFormDiv = styled(Box)({
   display: 'flex',
@@ -56,4 +57,7 @@ export const MyTimezone = styled(TimezoneSelect)({
     position: 'initial',
     width: '339px'
   }
+});
+
+export const MyAlert = styled(Alert)({
 });
