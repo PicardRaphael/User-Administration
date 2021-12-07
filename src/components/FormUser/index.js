@@ -21,7 +21,7 @@ const FormUser = ({
   successful
 }) => (
   <>
-    { successful && <MyAlert severity="success">L'utilisata à été ajouté</MyAlert>}
+    { successful && <MyAlert severity="success">L'utilisateur à été sauvegardé !</MyAlert>}
     <form onSubmit={handleFormSubmit}>
       <MyFormDiv component="div">
         <FormGroup>
